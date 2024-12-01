@@ -13,7 +13,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Ralway", sans-serif;
-  background-color: black;
+  background-color: #87CEEB; /* Bleu ciel */
   overflow-x: hidden;
 }
 
@@ -71,19 +71,6 @@ body {
   z-index: -99;
 }
 
-.imagefond {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  opacity: 1;
-  background-image: url(../../Bap-night/images/backimage.jpeg);
-  background-repeat: no-repeat;
-  background-position: center top;
-}
-
 .aligntext {
   text-align: center;
 }
@@ -107,6 +94,24 @@ body {
   left: 100%; /* À droite de l'élément parent */
   width: 10px; /* Largeur de la bordure */
   background: linear-gradient(180deg, #E4DEFE, #957BF9);
+}
+.bandeau-bordure .imagefond {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 1;
+  background-image: url(../../Bap-night/images/backimage.jpeg);
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.bandeau-bordure_image img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .bandeau-bordure_text {
   display: flex;
@@ -213,7 +218,7 @@ header .vdo video {
 .flex .box {
   position: relative;
   margin-left: 10%;
-  margin-top: 10%;
+  margin-top: 70%;
   margin-bottom: 5%;
   width: 300px;
   height: 300px;
@@ -254,7 +259,7 @@ header .vdo video {
   align-items: center;
   width: 100%;
   padding-inline: 5%;
-  padding-top: 8%;
+  padding-top: 20%;
   padding-bottom: 8%;
 }
 .grid2-item {
@@ -1003,6 +1008,12 @@ footer {
   margin-left: 3%;
 }
 
+#raitonspe img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
 .footerNav {
   margin: 30px 0;
 }
@@ -1056,8 +1067,8 @@ footer {
 }
 
 .leftside img {
-  width: 60%; /* Adapte la largeur de l'image à celle de la colonne */
-  max-width: 500px; /* Limite la taille maximale de l'image */
+  width: 30%; /* Adapte la largeur de l'image à celle de la colonne */
+  max-width: 300px; /* Limite la taille maximale de l'image */
   height: auto; /* Garde le ratio d'aspect original de l'image */
 }
 
@@ -1261,7 +1272,15 @@ button {
     border-bottom: #E4DEFE solid 8px;
     border-right: none;
   }
-
+  .bandeau-bordure::before {
+    display: none;
+  }
+  .bandeau-bordure_image img {
+    width: 100%;
+    height: 95%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
   .bandeau-bordure_text {
     padding: 2%;
     margin-left: 2%;
@@ -1944,11 +1963,12 @@ h4 {
 }
 
 .bubbles {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   z-index: 0;
   overflow: hidden;
+  pointer-events: none; /* Pour éviter d'interférer avec les clics */
   top: 0;
   left: 0;
 }
@@ -1958,7 +1978,7 @@ h4 {
   bottom: -100px;
   width: 40px;
   height: 40px;
-  background: #560404;
+  background: #a60c0c;
   border-radius: 50%;
   opacity: 0.2;
   filter: blur(3px);
